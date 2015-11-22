@@ -7,11 +7,7 @@ import numpy as np
 import pylab as pl
 from sklearn import datasets
 from sklearn.tree import DecisionTreeRegressor
-
-################################
-### ADD EXTRA LIBRARIES HERE ###
-################################
-
+from sklearn.cross_validation import train_test_split
 
 def load_data():
 	'''Load the Boston dataset.'''
@@ -27,18 +23,7 @@ def explore_city_data(city_data):
 	housing_prices = city_data.target
 	housing_features = city_data.data
 
-	###################################
-	### Step 1. YOUR CODE GOES HERE ###
-	###################################
-
-	# Please calculate the following values using the Numpy library
-	# Size of data?
-	# Number of features?
-	# Minimum value?
-	# Maximum Value?
-	# Calculate mean?
-	# Calculate median?
-	# Calculate standard deviation?
+	nbr_data_points = len(housing_prices)
 
 
 def performance_metric(label, prediction):
@@ -58,9 +43,8 @@ def split_data(city_data):
 	# Get the features and labels from the Boston housing data
 	X, y = city_data.data, city_data.target
 
-	###################################
-	### Step 3. YOUR CODE GOES HERE ###
-	###################################
+	# Use sklearn train_test_split function
+        X_train, X_test, y_train, y_test = train_test_split(X,y)
 
 	return X_train, y_train, X_test, y_test
 
