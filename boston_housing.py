@@ -24,6 +24,20 @@ def explore_city_data(city_data):
 	housing_features = city_data.data
 
 	nbr_data_points = len(housing_prices)
+	nbr_features = len(housing_features[0])
+	min_price = np.min(housing_prices)
+	max_price = np.max(housing_prices)
+	mean_price = np.mean(housing_prices)
+	median_price = np.median(housing_prices)
+	std_price = np.std(housing_prices)
+
+	print "number of data points:", nbr_data_points
+	print "number of features:", nbr_features
+	print "minimum housing price:", min_price
+	print "maximum housing price:", max_price
+	print "mean housing price:", mean_price
+	print "median housing price:", median_price
+	print "standard deviation:", std_price
 
 
 def performance_metric(label, prediction):
@@ -44,7 +58,7 @@ def split_data(city_data):
 	X, y = city_data.data, city_data.target
 
 	# Use sklearn train_test_split function
-        X_train, X_test, y_train, y_test = train_test_split(X,y)
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
 
 	return X_train, y_train, X_test, y_test
 
