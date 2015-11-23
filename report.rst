@@ -12,17 +12,11 @@ Boston housing prices report
 Statistical Analysis and Data Exploration
 -----------------------------------------
 :number of data points: 506
-
 :number of features: 13
-
 :minimum housing price: 5.0
-
 :maximum housing price: 50.0
-
 :mean housing price: 22.5328063241
-
 :median housing price: 21.2
-
 :standard deviation: 9.18801154528
 
 Evaluating Model Performance
@@ -104,9 +98,16 @@ the *variance* error is dominant and we suffer from *overfitting*
 
 Training and testing error in relation to model complexity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: complexity_performance.png
+
 We observe that The training error can be made arbitrarily small by increasing 
-the model
-complexity and
+the model complexity. This is a manifestation of the fact the complex model
+can merely *memorize* the training set. This will not generalize well to yet 
+unseen examples.
+
+The testing error decreases for a while, reaches a minimum and increase again.
+
 
 
 
