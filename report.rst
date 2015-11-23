@@ -101,6 +101,9 @@ Training and testing error in relation to model complexity
 
 .. figure:: complexity_performance.png
 
+caption for the figure
+
+
 We observe that The training error can be made arbitrarily small by increasing 
 the model complexity. This is a manifestation of the fact the complex model
 can merely *memorize* the training set. This will not generalize well to yet 
@@ -108,7 +111,24 @@ unseen examples.
 
 The testing error decreases for a while, reaches a minimum and increase again.
 
+Model prediction
+----------------
 
+Predicting housing price
+~~~~~~~~~~~~~~~~~~~~~~~~
+See the output of the script for the predicted housing price along with the
+max_depth parameter choosen by the grid search. Invoke the script as follow:
+
+.. code:: python
+
+ python boston_housing.py
+
+Comparision of prediction to earlier statistics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The predicted price falls in the min and max range of 5 - 50. It is also very
+close to the average house price of 22.58
+
+It therefore seems like a reasonable housing price.
 
 
 
