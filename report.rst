@@ -11,13 +11,19 @@ Boston housing prices report
 
 Statistical Analysis and Data Exploration
 -----------------------------------------
-number of data points: 506
-number of features: 13
-minimum housing price: 5.0
-maximum housing price: 50.0
-mean housing price: 22.5328063241
-median housing price: 21.2
-standard deviation: 9.18801154528
+:number of data points: 506
+
+:number of features: 13
+
+:minimum housing price: 5.0
+
+:maximum housing price: 50.0
+
+:mean housing price: 22.5328063241
+
+:median housing price: 21.2
+
+:standard deviation: 9.18801154528
 
 Evaluating Model Performance
 ----------------------------
@@ -87,7 +93,7 @@ When the max depth is 1, the training error and the testing error converge
 quickly to a high value. This means that the additional data would not help
 the model to perform better and the the error comes from the intrinsic 
 inhability of the model to fit the data. In this case, the *bias* error is
-dominant and we suffer from *underfitting*.
+dominant and we suffer from *underfitting*. 
 
 Max depth 10
 ````````````
@@ -96,7 +102,11 @@ testing error. The performance of our model varies depending of the dataset
 it is beeing trained on and more data could reduce it's error. In this case,
 the *variance* error is dominant and we suffer from *overfitting*
 
-
+Training and testing error in relation to model complexity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We observe that The training error can be made arbitrarily small by increasing 
+the model
+complexity and
 
 
 
