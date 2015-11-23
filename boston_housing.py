@@ -6,6 +6,7 @@ Loading the boston dataset and examining its target (label) distribution.
 import numpy as np
 import pylab as pl
 from sklearn import datasets
+from sklearn import metrics
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.cross_validation import train_test_split
 
@@ -42,14 +43,7 @@ def explore_city_data(city_data):
 
 def performance_metric(label, prediction):
 	'''Calculate and return the appropriate performance metric.'''
-
-	###################################
-	### Step 2. YOUR CODE GOES HERE ###
-	###################################
-
-	# http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics
-	pass
-
+	return metrics.mean_squared_error(label, prediction)
 
 def split_data(city_data):
 	'''Randomly shuffle the sample set. Divide it into training and testing set.'''
