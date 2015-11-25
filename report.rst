@@ -7,7 +7,7 @@ Boston housing prices report
 
 :Date: Sun Nov 22 13:45:44 EST 2015
 
-:Last updated: Sun Nov 22 18:55:17 EST 2015
+:Last updated: Wed Nov 25 18:47:40 EST 2015
 
 Data Exploration
 ----------------
@@ -88,10 +88,11 @@ Learning curves for tree regressors
 Max depth 1
 ```````````
 .. figure:: figure_1.png
+   :scale: 50%
 
-size-error curve (max_depth = 1)
+   size-error curve (max_depth = 1)
 
-..
+   ..
 
 When the max depth is 1, the training error and the testing error converge
 quickly to a high value. This means that the additional data would not help
@@ -107,6 +108,8 @@ Max depth 10
 
    size-error curve (max_depth = 10)
 
+   ..
+
 When the max depth is 10, there is a gap between the training error and the 
 testing error. The performance of our model varies depending of the dataset
 it is beeing trained on and more data could reduce it's error. In this case,
@@ -117,8 +120,12 @@ Error Curves and Model Complexity
 
 .. figure:: complexity_performance.png
    :scale: 50%
+   :alt: lol
 
    complexity-error curve
+
+   ..
+
 
 We observe that The training error can be made arbitrarily small by increasing 
 the model complexity. This is a manifestation of the fact the complex model
