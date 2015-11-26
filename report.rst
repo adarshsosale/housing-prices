@@ -9,6 +9,8 @@ Boston housing prices report
 
 :Last updated: Wed Nov 25 18:47:40 EST 2015
 
+:webversion: https://github.com/maximusmagnusjopela/housing-prices 
+
 Data Exploration
 ----------------
 
@@ -68,6 +70,11 @@ data in our training set to make decisions about the hyperparameters of a model.
 It therefore leads to better models since more data is available for training if
 we do not need to create a validation set from the training data.
 
+When used in conjunction with a grid search, this means that more data goes into 
+the training of each model for each parameters. This gives us a change of 
+finding a model that outperforms one who would have been found using 3 sets of 
+data (the validation, the training and the testing sets) since some training
+data would be lost to the validation set.
 
 Analyzing Model Performance
 ---------------------------
@@ -82,8 +89,8 @@ increase. It also converges to a minimum testing error value.
 
 Both the training error and the testing error converge to the same value.
 
-Learning curves for tree regressors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Learning curves and Bias & Variance Analysis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Max depth 1
 ```````````
@@ -95,8 +102,8 @@ Max depth 1
    ..
 
 When the max depth is 1, the training error and the testing error converge
-quickly to a high value. This means that the additional data would not help
-the model to perform better and the the error comes from the intrinsic 
+quickly to a high value. This means that additional data would not help
+the model to perform better and that the error comes from the intrinsic 
 inhability of the model to fit the data. In this case, the *bias* error is
 dominant and we suffer from *underfitting*. 
 
@@ -112,7 +119,7 @@ Max depth 10
 
 When the max depth is 10, there is a gap between the training error and the 
 testing error. The performance of our model varies depending of the dataset
-it is beeing trained on and more data could reduce it's error. In this case,
+it is beeing trained on, and more data could reduce it's error. In this case,
 the *variance* error is dominant and we suffer from *overfitting*
 
 Error Curves and Model Complexity
@@ -120,7 +127,6 @@ Error Curves and Model Complexity
 
 .. figure:: complexity_performance.png
    :scale: 50%
-   :alt: lol
 
    complexity-error curve
 
@@ -128,7 +134,7 @@ Error Curves and Model Complexity
 
 
 We observe that The training error can be made arbitrarily small by increasing 
-the model complexity. This is a manifestation of the fact the complex model
+the model complexity. This is a manifestation of the fact that the complex model
 can merely *memorize* the training set. This will not generalize well to yet 
 unseen examples.
 
@@ -136,14 +142,14 @@ The testing error decreases for a while, reaches a minimum and increase again.
 This is because, at the beginning, the model suffers from underfitting and
 bias error is reduced by more complexity. However, when we keep increasing the 
 complexity, variance error becomes dominant over the bias error drop and we
-see an increase in the overall error
+see an increase in the overall error as a result of overfitting.
 
 Picking the Optimal Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We want to select the max_depth parameter that *minimises the testing error*. 
-From complexity-error curve, this appear to happen for a max_depth parameter of
-about 5.
+We want to select the max depth parameter that *minimises the testing error*. 
+From the complexity-error curve previously shown, this appear to happen for 
+a max depth parameter of about 5.
 
 Model prediction
 ----------------
@@ -170,9 +176,9 @@ For convinience, sample script output is reproduced here:
  Prediction: [ 20.96776316]
 
 
-Comparision of prediction to earlier statistics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Comparing Model Price to Housing Statistics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The predicted price falls in the min and max range of 5 - 50. It is also very
-close to the average house price of 22.58 (withing one standard deviation).
+close to the average house price of 22.58 (within one standard deviation).
 
-This is sufficient to believe that it is a reasonable housing price.
+This is sufficient to believe that it is a reasonable housing price prediction.
