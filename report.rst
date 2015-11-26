@@ -45,17 +45,18 @@ us to *demonstrate the ability of our model to generalise to yet unseen data
 examples*. 
 
 If we did not split our data into training/testing sets, we could make
-the training error arbitrarily small by augmenting the model complexity (e.g:
-fitting 10 noisy linear data points with a 57th order polynomial).
-However, this model would overfit the data and would make poor prediction with
-new training examples.
+the model error arbitrarily small by augmenting the model complexity (e.g:
+fitting 10 noisy linear data points with a 57th order polynomial). Having no
+other data set to measure performance then the training set, we would always 
+get a model with very low error. However, this model would overfit the data and 
+would make poor prediction on new instances.
 
 Grid search
 ~~~~~~~~~~~
 Grid search allows us to optimize parameters that are not directly learned
 by the machine learning algorithm. An example parameter that is not directly
-learned by the machine learning algorithm could be the degree of the fitting
-polynomial in the case of a linear regression. 
+learned could be the degree of the fitting polynomial in the case of a linear 
+regression. 
 
 Imagine we are trying to find the optimal model complexity (degree) of a
 polynomial used to fit some data. We might want to use grid search in order
@@ -71,7 +72,7 @@ It therefore leads to better models since more data is available for training if
 we do not need to create a validation set from the training data.
 
 When used in conjunction with a grid search, this means that more data goes into 
-the training of each model for each parameters. This gives us a change of 
+the training of each model for each parameters. This gives us a chance of 
 finding a model that outperforms one who would have been found using 3 sets of 
 data (the validation, the training and the testing sets) since some training
 data would be lost to the validation set.
@@ -138,7 +139,7 @@ the model complexity. This is a manifestation of the fact that the complex model
 can merely *memorize* the training set. This will not generalize well to yet 
 unseen examples.
 
-The testing error decreases for a while, reaches a minimum and increase again.
+The testing error decreases for a while, reaches a minimum and increases again.
 This is because, at the beginning, the model suffers from underfitting and
 bias error is reduced by more complexity. However, when we keep increasing the 
 complexity, variance error becomes dominant over the bias error drop and we
@@ -163,7 +164,7 @@ max_depth parameter choosen by the grid search. Invoke the script as follow:
 
  python boston_housing.py
 
-For convinience, sample script output is reproduced here:
+For convinience, relevent script output is reproduced here:
 
 .. code:: bash
 
@@ -174,7 +175,6 @@ For convinience, sample script output is reproduced here:
             splitter='best')
  House: [11.95, 0.0, 18.1, 0, 0.659, 5.609, 90.0, 1.385, 24, 680.0, 20.2, 332.09, 12.13]
  Prediction: [ 20.96776316]
-
 
 Comparing Model Price to Housing Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
