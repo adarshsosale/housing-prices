@@ -9,7 +9,7 @@ Boston housing prices report
 
 :Last updated: Wed Nov 25 18:47:40 EST 2015
 
-:webversion: https://github.com/maximusmagnusjopela/housing-prices 
+:online version: https://github.com/maximusmagnusjopela/housing-prices 
 
 Data Exploration
 ----------------
